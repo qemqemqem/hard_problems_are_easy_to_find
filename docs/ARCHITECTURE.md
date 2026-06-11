@@ -126,7 +126,9 @@ Coverage target: the scorer and generator are the trust kernel — they get exha
 1. Pick the default sweep from `difficulty_params` (5 levels spanning "trivial" to "expected-hopeless" based on theory/solver cost).
 2. Run ~10 instances/level on Haiku 4.5, C0, default thinking. 
 3. Adjust the sweep so observed accuracy spans ≳90% → ≲10% across levels; re-run once.
-4. Freeze the sweep in the family module (`difficulty_params`) and record the calibration run in the experiment log. Calibration spend comes out of the $50 budget envelope (~$5 total).
+4. Freeze the calibrated sweep in `calibration/calibrated.json` (kept out of the family modules so golden snapshots stay pinned; run configs read the JSON). Record the calibration runs in the experiment log. Calibration spend comes out of the $50 budget envelope (~$5 total).
+
+> **Status: DONE for Haiku 4.5 / C0 (2026-06-11).** Two rounds (72 + 90 samples, ~$2). Every family has a low-but-nonzero calibrated point; see `calibration/calibrated.json` for points, sweeps, and observed correct-rates.
 
 ### Implementation notes for the calibration pass (from family implementers, 2026-06-11)
 

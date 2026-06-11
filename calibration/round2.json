@@ -1,0 +1,29 @@
+{
+  "tsp": [
+    {"difficulty": {"n": 12}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"n": 13}, "seeds": [21, 22, 23, 24, 25, 26]}
+  ],
+  "maze": [
+    {"difficulty": {"size": 6, "density": 0.25}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"size": 7, "density": 0.25}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"size": 8, "density": 0.25}, "seeds": [21, 22, 23, 24, 25, 26]}
+  ],
+  "sat": [
+    {"difficulty": {"n_vars": 7, "ratio": 4.27}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"n_vars": 8, "ratio": 4.27}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"n_vars": 9, "ratio": 4.27}, "seeds": [21, 22, 23, 24, 25, 26]}
+  ],
+  "argmax": [
+    {"difficulty": {"domain_size": 20, "n_modes": 1}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"domain_size": 50, "n_modes": 2}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"domain_size": 100, "n_modes": 2}, "seeds": [21, 22, 23, 24, 25, 26]}
+  ],
+  "chaos": [
+    {"difficulty": {"system": "logistic", "k": 1}, "seeds": [21, 22, 23, 24, 25, 26, 27, 28]},
+    {"difficulty": {"system": "henon", "k": 1}, "seeds": [21, 22, 23, 24]}
+  ],
+  "automata": [
+    {"difficulty": {"width": 10, "k": 2, "rule": 110}, "seeds": [21, 22, 23, 24, 25, 26]},
+    {"difficulty": {"width": 10, "k": 3, "rule": 110}, "seeds": [21, 22, 23, 24, 25, 26]}
+  ]
+}

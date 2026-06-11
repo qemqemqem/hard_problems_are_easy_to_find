@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "model": "anthropic/claude-haiku-4-5",
+    "condition": "C0",
+    "temperature": 0,
+    "date": "2026-06-11",
+    "rounds": ["logs/cal_round1", "logs/cal_round2"],
+    "target": "calibrated_point = headline correct-rate in ~[0.1, 0.35]; sweep spans ~0.9 -> ~0.0"
+  },
+  "tsp": {
+    "calibrated_point": {"n": 12},
+    "sweep": [{"n": 8}, {"n": 10}, {"n": 11}, {"n": 12}, {"n": 13}, {"n": 14}],
+    "observed": {"n=8": 1.0, "n=11": 0.75, "n=12": 0.17, "n=13": 0.0, "n=14": 0.0},
+    "notes": "Beyond n=13 tours stay valid (value ~0.93-0.95) but never optimal; gradated ratio is the metric past the cliff."
+  },
+  "maze": {
+    "calibrated_point": {"size": 6, "density": 0.25},
+    "sweep": [{"size": 4, "density": 0.25}, {"size": 5, "density": 0.25}, {"size": 6, "density": 0.25}, {"size": 7, "density": 0.25}, {"size": 8, "density": 0.25}, {"size": 10, "density": 0.25}],
+    "observed": {"size=6": 0.2, "size=7": 0.0, "size=8": 0.2, "size=10": 0.0},
+    "notes": "Pooled rounds 1+2; high seed variance. Cliff is at/below size 6 - easy rungs (4, 5) added to sweep, unmeasured. Failures are invalid moves (wall hits, stopping short), not suboptimality."
+  },
+  "sat": {
+    "calibrated_point": {"n_vars": 8, "ratio": 4.27},
+    "sweep": [{"n_vars": 4, "ratio": 4.27}, {"n_vars": 6, "ratio": 4.27}, {"n_vars": 7, "ratio": 4.27}, {"n_vars": 8, "ratio": 4.27}, {"n_vars": 10, "ratio": 4.27}, {"n_vars": 12, "ratio": 4.27}],
+    "observed": {"n_vars=6": 1.0, "n_vars=7": 0.17, "n_vars=8": 0.33, "n_vars=9": 0.17, "n_vars=10": 0.0, "n_vars=14": 0.0, "n_vars=18": 0.0},
+    "notes": "Very sharp cliff between n=6 and n=7. Dominant failure: claims SAT with a broken assignment (label=invalid) - the certificate asymmetry working as designed."
+  },
+  "argmax": {
+    "calibrated_point": {"domain_size": 50, "n_modes": 2},
+    "sweep": [{"domain_size": 20, "n_modes": 1}, {"domain_size": 50, "n_modes": 2}, {"domain_size": 100, "n_modes": 2}, {"domain_size": 100, "n_modes": 3}, {"domain_size": 1000, "n_modes": 6}],
+    "observed": {"d=20,m=1": 0.33, "d=50,m=2": 0.17, "d=100,m=2": 0.0, "d=100,m=3": 0.0, "d=1000,m=6": 0.0},
+    "notes": "Exact-argmax correct-rate; gradated value stays 0.55-0.8 past the cliff (model finds good-not-best points). Easy end requires single-mode functions."
+  },
+  "chaos": {
+    "calibrated_point": {"system": "logistic", "k": 1},
+    "sweep": [{"system": "henon", "k": 1}, {"system": "logistic", "k": 1}, {"system": "logistic", "k": 2}, {"system": "logistic", "k": 4}, {"system": "logistic", "k": 8}],
+    "observed": {"henon k=1": 0.75, "logistic k=1": 0.25, "logistic k=2": 0.0, "logistic k=4": 0.0},
+    "notes": "NO HEADROOM BELOW k=1: a single logistic iteration (one 6-digit multiply chain) is already at the cliff for 4-decimal exactness. Henon k=1 is the easy rung (gentler arithmetic). Consider a 3-decimal variant if an easier rung is ever needed; digits-based gradated value is the primary metric for this family."
+  },
+  "automata": {
+    "calibrated_point": {"width": 10, "k": 3, "rule": 110},
+    "sweep": [{"width": 10, "k": 1, "rule": 110}, {"width": 10, "k": 2, "rule": 110}, {"width": 10, "k": 3, "rule": 110}, {"width": 10, "k": 4, "rule": 110}, {"width": 10, "k": 8, "rule": 110}],
+    "observed": {"k=1": 0.93, "k=2": 0.4, "k=3": 0.67, "k=4": 0.0, "k=8": 0.0},
+    "notes": "k=2 vs k=3 non-monotonic at these sample sizes (n=10/6) - noise; cliff band is k=2-4. Hamming-fraction value declines smoothly (0.85 -> 0.53 by k=8)."
+  }
+}

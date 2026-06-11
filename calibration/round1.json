@@ -1,0 +1,32 @@
+{
+  "tsp": [
+    {"difficulty": {"n": 8}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"n": 11}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"n": 14}, "seeds": [11, 12, 13, 14]}
+  ],
+  "maze": [
+    {"difficulty": {"size": 6, "density": 0.25}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"size": 8, "density": 0.25}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"size": 10, "density": 0.25}, "seeds": [11, 12, 13, 14]}
+  ],
+  "sat": [
+    {"difficulty": {"n_vars": 10, "ratio": 4.27}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"n_vars": 14, "ratio": 4.27}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"n_vars": 18, "ratio": 4.27}, "seeds": [11, 12, 13, 14]}
+  ],
+  "argmax": [
+    {"difficulty": {"domain_size": 25, "n_modes": 2}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"domain_size": 100, "n_modes": 3}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"domain_size": 1000, "n_modes": 6}, "seeds": [11, 12, 13, 14]}
+  ],
+  "chaos": [
+    {"difficulty": {"system": "logistic", "k": 1}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"system": "logistic", "k": 2}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"system": "logistic", "k": 4}, "seeds": [11, 12, 13, 14]}
+  ],
+  "automata": [
+    {"difficulty": {"width": 10, "k": 2, "rule": 110}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"width": 10, "k": 4, "rule": 110}, "seeds": [11, 12, 13, 14]},
+    {"difficulty": {"width": 10, "k": 8, "rule": 110}, "seeds": [11, 12, 13, 14]}
+  ]
+}
