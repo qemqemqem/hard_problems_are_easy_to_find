@@ -1,0 +1,34 @@
+{
+  "answer": "0.6981",
+  "aux": {
+    "lyapunov_nominal": 0.419,
+    "rejected_initial_conditions": 0,
+    "trajectory_first_digits": [
+      "0.2249",
+      "0.9642",
+      "-0.2340",
+      "1.2126",
+      "-1.1287",
+      "-0.4196",
+      "0.4149",
+      "0.6332",
+      "0.5632"
+    ],
+    "x_final": 0.6981134277367858
+  },
+  "data": {
+    "a": 1.4,
+    "b": 0.3,
+    "k": 16,
+    "system": "henon",
+    "x0": 0.224906,
+    "y0": 0.035003
+  },
+  "difficulty": {
+    "k": 16,
+    "system": "henon"
+  },
+  "family": "chaos",
+  "family_version": "1.0",
+  "seed": 2026
+}

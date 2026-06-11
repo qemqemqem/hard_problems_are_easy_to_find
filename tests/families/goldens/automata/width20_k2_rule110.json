@@ -1,0 +1,30 @@
+{
+  "answer": "01111110011000000000",
+  "aux": {
+    "rejected_initial_states": 0,
+    "rule_table": {
+      "000": "0",
+      "001": "1",
+      "010": "1",
+      "011": "1",
+      "100": "0",
+      "101": "1",
+      "110": "1",
+      "111": "0"
+    }
+  },
+  "data": {
+    "initial": "01001110000101011011",
+    "rule": 110,
+    "steps": 2,
+    "width": 20
+  },
+  "difficulty": {
+    "k": 2,
+    "rule": 110,
+    "width": 20
+  },
+  "family": "automata",
+  "family_version": "1.0",
+  "seed": 2026
+}

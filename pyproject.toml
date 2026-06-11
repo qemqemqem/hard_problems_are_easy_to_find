@@ -1,0 +1,21 @@
+[project]
+name = "hard-problems"
+version = "0.1.0"
+description = "Procedurally generated problem families that are easy to state, easy to verify, and hard for LLMs to solve by thinking"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

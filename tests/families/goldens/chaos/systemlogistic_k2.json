@@ -1,0 +1,26 @@
+{
+  "answer": "0.8488",
+  "aux": {
+    "lyapunov_nominal": 0.494,
+    "rejected_initial_conditions": 0,
+    "trajectory_first_digits": [
+      "0.2249",
+      "0.6799",
+      "0.8488"
+    ],
+    "x_final": 0.8488353113720881
+  },
+  "data": {
+    "k": 2,
+    "r": 3.9,
+    "system": "logistic",
+    "x0": 0.224906
+  },
+  "difficulty": {
+    "k": 2,
+    "system": "logistic"
+  },
+  "family": "chaos",
+  "family_version": "1.0",
+  "seed": 2026
+}

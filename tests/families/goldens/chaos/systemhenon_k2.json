@@ -1,0 +1,28 @@
+{
+  "answer": "-0.2340",
+  "aux": {
+    "lyapunov_nominal": 0.419,
+    "rejected_initial_conditions": 0,
+    "trajectory_first_digits": [
+      "0.2249",
+      "0.9642",
+      "-0.2340"
+    ],
+    "x_final": -0.23404795989919122
+  },
+  "data": {
+    "a": 1.4,
+    "b": 0.3,
+    "k": 2,
+    "system": "henon",
+    "x0": 0.224906,
+    "y0": 0.035003
+  },
+  "difficulty": {
+    "k": 2,
+    "system": "henon"
+  },
+  "family": "chaos",
+  "family_version": "1.0",
+  "seed": 2026
+}
