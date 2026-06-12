@@ -1,0 +1,11 @@
+# Sandbox for C1/C-inf program execution (referenced by adapters/inspect_ai.py).
+# Plain python image: family programs are stdlib-only by project convention,
+# so no extra deps. No network, memory-capped, fast teardown.
+services:
+  default:
+    image: "python:3.12-slim"
+    command: "tail -f /dev/null"
+    init: true
+    network_mode: none
+    mem_limit: 2g
+    stop_grace_period: 1s
