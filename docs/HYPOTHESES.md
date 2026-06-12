@@ -62,9 +62,27 @@ There exists a generated family where, at sizes a human-plus-laptop solves relia
 Frontier-tier models (set TBD post-Phase 1) move every C0 cliff right by ≤4× in knob value, with the *same functional forms* (H2's exponential, H3's Lyapunov horizon — different constants, same laws). The architecture's signature survives capability scaling.
 **Confidence: 0.75.**
 
+## Andrew's hypotheses (added 2026-06-12)
+
+**Provenance note:** H1–H12 above are the agent's (Claude Fable 5) pre-registered predictions, frozen before any model runs. The hypotheses below are **Andrew's own**, stated 2026-06-12 — after Experiment 1's Haiku results but before any scaling, multi-model, or Phase-2 runs. Wording paraphrased by the agent from Andrew's notes; the ideas are his.
+
+### A1 — Which training factor buys cliff position?
+Across models, the C0 cliffs improve as a function of *some* training factors and not others — parameter count, depth in layers, training-data size, and training-data quality should be separated. The interesting result is a dissociation: some axis of training improvement fails to pay out on these problems (candidate headline: "parameter count helps, but more training data doesn't"). (Agent note: circuit-depth theory makes "depth in layers moves serial-family cliffs; width/params/data mostly don't" the sharpest registrable version. Requires open-weight model ladders — Pythia/OLMo for data-size at fixed architecture, size ladders for params — since frontier APIs disclose none of these factors.)
+*Exploratory — no confidence number assigned.*
+
+### A2 — The C1/C∞ gap generalizes beyond TSP
+There are other problem classes where one-shot code persistently underperforms interactive code. Framed as a question, not a bet: *which* problems exhibit this gap, and what mechanism drives each? (Investigation delegated 2026-06-12; findings to land in `C1_CINF_GAP.md`.)
+
+### A3 — Tacit-objective problems break the C1 rescue (the furniture-placement conjecture)
+There exist real-world-like problems whose constraints are driven by intuition: strong inter-rater agreement among humans about what's good, but laborious to spell out exhaustively (canonical example: furniture placement — the desk shouldn't sit next to the fridge, walking space must remain, and enumerating every such constraint is impractical even though people agree on them). For these, outsourcing to program execution doesn't help, because *writing the program requires articulating the very objective that is tacit* — the thinker must do the thinking internally. Prediction: on such problems the C1 rescue observed everywhere in Experiment 1 fails (C1 ≈ C0), and this is the most important regime for the C0/C1 comparison because it implies a genuine real-world failure that code execution cannot patch. (Agent note: the measurable signature is super-additivity — C∞ > max(C0, C1) — since C∞ is the only condition where model-resident judgment and external search can combine.)
+*Acknowledged hard to operationalize; ground-truth design is the open problem.*
+
+### A4 — Distractors hurt the program, not just the answer
+Heavy distractor load may make the right program harder to *write* (C1 degrades), not just the direct answer harder to produce (C0 degrades). Counter-hypothesis, also Andrew's: the distractor axis might reduce to needle-in-a-haystack retrieval in disguise, in which case it is less interesting than it looks.
+
 ## Scoring this document
 
 When Phase 1 data lands: each hypothesis gets graded (held / partially / falsified) in a RESULTS.md appendix, including the misses — the pre-registration only has value if the misses are reported with the hits.
 
 ---
-*Amendment log: (empty)*
+*Amendment log: 2026-06-12 — appended provenance note and Andrew's hypotheses A1–A4. No edits to H1–H12.*

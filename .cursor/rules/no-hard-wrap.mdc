@@ -1,0 +1,10 @@
+---
+description: Never hard-wrap prose lines at a fixed column width
+alwaysApply: true
+---
+
+# No hard-wrapping
+
+When writing or editing Markdown, prose, comments, or any natural-language text: **never insert line breaks to enforce a column limit** (e.g. 80, 100, or 120 characters). Let lines run to their natural length. Only break lines at genuine paragraph or sentence boundaries, or where the structure of the document (lists, headings, code blocks) requires it.
+
+This applies everywhere: `.md`, `.txt`, inline comments, docstrings, commit messages, and any other prose output.
