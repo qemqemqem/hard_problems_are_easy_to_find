@@ -6,6 +6,8 @@
 
 **Self-hosting is mandatory** — none of the research suites are on serverless APIs (verified per-model below). **Recommended stack: rent one A100 80GB or L40S on RunPod (~$1–2.2/hr), let Inspect's `vllm-completions/` provider launch `vllm serve` per model, loop over models/revisions in a shell script.** The whole A1 observational sweep is **single-digit-to-low-double-digit GPU-hours: ~$15–50 of compute**. The binding constraint is not money or plumbing — it's that **most research suites have 2,048-token context windows**, which is incompatible with Experiment 1's ~1k prompts + ≤8k outputs and forces a redesign of the C0 answer format for the base-model arm (§4).
 
+**Provider update (2026-06-12, see A1_GPU_PROVIDER.md):** per Andrew's provider preferences (Railway/Vercel/Lambda/GCP, CLI-orchestration-first), the chosen provider is **Lambda Cloud on a 1× A6000 48GB (~$0.80/hr)** — Railway and Vercel sell no GPUs, GCP's new-account GPU-quota friction is a multi-day stall risk, and Lambda's flat single-API-key REST API is fully scriptable. The A6000 fits every model in this plan (Pythia-12B bf16 ≈ 24GB weights). RunPod remains the documented off-list fallback. Everything else in this doc (vLLM, `vllm-completions`, model loop, sample arithmetic) is provider-independent and unchanged; gotchas specific to Lambda (no stop state — terminate must be scripted; filesystems attach at launch and are region-pinned) live in A1_GPU_PROVIDER.md.
+
 ## 1. Serverless hosting availability
 
 Expectation confirmed: research-ladder models are not on per-token serverless APIs. Verified 2026-06-12:
